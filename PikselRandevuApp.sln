@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2042
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PikselRandevuApp", "PikselRandevuApp\PikselRandevuApp.csproj", "{3F06C8A4-CCD8-47F3-B94B-4B46A45C005B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entity", "Entity\Entity.csproj", "{5E732419-68CE-4027-A0F3-D65141D3BBF1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Facade", "Facade\Facade.csproj", "{C9EC00A1-21BD-4BFB-ACAA-4580D38EA592}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoleKontrol", "RoleKontrol\RoleKontrol.csproj", "{5E93E27D-0A2E-4059-8134-8724E534E4C1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3F06C8A4-CCD8-47F3-B94B-4B46A45C005B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F06C8A4-CCD8-47F3-B94B-4B46A45C005B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F06C8A4-CCD8-47F3-B94B-4B46A45C005B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F06C8A4-CCD8-47F3-B94B-4B46A45C005B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E732419-68CE-4027-A0F3-D65141D3BBF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E732419-68CE-4027-A0F3-D65141D3BBF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E732419-68CE-4027-A0F3-D65141D3BBF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E732419-68CE-4027-A0F3-D65141D3BBF1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9EC00A1-21BD-4BFB-ACAA-4580D38EA592}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9EC00A1-21BD-4BFB-ACAA-4580D38EA592}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9EC00A1-21BD-4BFB-ACAA-4580D38EA592}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9EC00A1-21BD-4BFB-ACAA-4580D38EA592}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E93E27D-0A2E-4059-8134-8724E534E4C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E93E27D-0A2E-4059-8134-8724E534E4C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E93E27D-0A2E-4059-8134-8724E534E4C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E93E27D-0A2E-4059-8134-8724E534E4C1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {ECFE0DAC-5812-4A60-9854-760407543B21}
+	EndGlobalSection
+EndGlobal
