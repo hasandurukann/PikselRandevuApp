@@ -5,22 +5,45 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Facade;
 using Entity;
 using System.Text.RegularExpressions;
 using System.IO;
-using serialRoleAcmaKapama;
 using System.IO.Ports;
 
 namespace PikselRandevuApp
 {
     public partial class Main : Form
     {
+        private SerialPort myport;
         public Main()
         {
             InitializeComponent();
+            init();
+        }
+        private void init()
+
+        {
+
+            try
+            {
+                myport = new SerialPort();
+                myport.BaudRate = 9600;
+                string port=File.ReadAllText(Application.StartupPath + "\\portinfo.txt");
+                myport.PortName = port;
+                myport.Open();
+
+                //btn13_btn.Enabled = true;
+                //btn14_btn.Enabled = false;
+            }
+
+            catch (Exception)
+            {
+                MessageBox.Show("Error");
+
+            }
+
         }
 
         private int userID = 0;
@@ -50,11 +73,6 @@ namespace PikselRandevuApp
                     }
                 }
             }
-            //serialRoleAcKapa role = new serialRoleAcKapa();
-            //string[] portlar = role.acikPortlariGetir();
-            //SerialPort portum = new SerialPort("COM3");
-            //role.serialPortAc("COM3");
-            //role.roleHepsiKapan();
         }
         private void btnLogin_Click_1(object sender, EventArgs e)
         {
@@ -141,20 +159,20 @@ namespace PikselRandevuApp
                         lblSessionEnd.Text = "-";
                         lblSessionSpent.Text = curusage["curmin"].ToString();
                         lblSessionSpent.Tag = curusage["kullanim_id"].ToString();
-                        serialRoleAcKapa role = new serialRoleAcKapa();
-                        string[] portlar = role.acikPortlariGetir();
-                        SerialPort portum = new SerialPort("COM3");
-                        role.serialPort = portum;
-                        if (!role.serialPortAcikMi(role.serialPort))
-                        {
-                            role.serialPortAc("COM3");
+                        //serialRoleAcKapa role = new serialRoleAcKapa();
+                        //string[] portlar = role.acikPortlariGetir();
+                        //SerialPort portum = new SerialPort("COM37");
+                        //role.serialPort = portum;
+                        //if (!role.serialPortAcikMi(role.serialPort))
+                        //{
+                        //    role.serialPortAc("COM37");
                             
-                        }
-                        else
-                        {
-                            role.roleHepsiKapan();
-                        }
-                        for (int i = 0, m = 0; i <= rescgfs[0].Length; i++)
+                        //}
+                        //else
+                        //{
+                        //    role.roleHepsiKapan();
+                        //}
+                        for (int i = 0, m = 0; i < rescgfs[0].Length; i++)
                         {
                             char ch = rescgfs[0][i];
                             if (ch != ',')
@@ -162,7 +180,7 @@ namespace PikselRandevuApp
                                 if (Convert.ToInt32(ch.ToString()) == rid)
                                 {
                                     m = m + 1;
-                                    role.acKapa(m.ToString(), true);
+                                    //myport.WriteLine(m.ToString());
                                     btnEndSession.Tag = m.ToString();
                                     return;
                                 }
@@ -189,13 +207,37 @@ namespace PikselRandevuApp
                     int roleid = Convert.ToInt32(btnEndSession.Tag.ToString());
                     if (roleid != 0)
                     {
-                        serialRoleAcKapa role = new serialRoleAcKapa();
-                        SerialPort portum = new SerialPort("COM3");
-                        role.serialPort = portum;
-                        role.acKapa(roleid.ToString(), false);
+                        //serialRoleAcKapa role = new serialRoleAcKapa();
+                        //string[] portlar = role.acikPortlariGetir();
+                        //SerialPort portum = new SerialPort("COM37");
+                        //role.serialPort = portum;
+                        //if (!role.serialPortAcikMi(role.serialPort))
+                        //{
+                        //    role.serialPortAc("COM37");
+
+                        //}
+                        //else
+                        //{
+                        //    role.roleHepsiKapan();
+                        //}
+                        string rolec = "";
+                        switch (roleid)
+                        {
+                            case 1:rolec = "a";break;
+                            case 2: rolec = "b"; break;
+                            case 3: rolec = "c"; break;
+                            case 4: rolec = "d"; break;
+                            case 5: rolec = "e"; break;
+                            case 6: rolec = "f"; break;
+                            case 7: rolec = "g"; break;
+                            case 8: rolec = "h"; break;
+                            default:rolec = "";
+                                break;
+                        }
+                        myport.WriteLine(rolec);
                     }
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
                     
                 }
